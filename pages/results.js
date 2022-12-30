@@ -6,14 +6,12 @@ export default function Results () {
     const [data, setData] = useState();
 
     const __API = {
-        API_KEY: 'AIzaSyAupOHXob6S4K3KnPFOWnN8hs4WWkibGQw',
+        API_KEY: 'AIzaSyCXrGzmkwzI-Wh-Ut40PAjr7_IpYIK544U',
         base_link: 'https://youtube.googleapis.com/youtube/v3/search'
     }
-
-    const API_LINK = `${__API.base_link}&key=${__API.API_KEY}`
     
     useEffect(() => {
-        axios.get('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=Sponge pop&key=AIzaSyAupOHXob6S4K3KnPFOWnN8hs4WWkibGQw&pageToken=CBkQAA')
+        axios.get(`${__API.base_link}?part=snippet&maxResults=25&q=${window.location.search}&key=${__API.API_KEY}`)
         .then(res => {
             setData(res.data)
         }).catch(error => console.log(error))
