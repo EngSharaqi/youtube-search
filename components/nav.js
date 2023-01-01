@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css'
 import YTLogo from '../public/YouTube_Logo.png'
 import { useState } from 'react';
 
-export default function Nav () {
+export default function Nav (props) {
     const [searchQ, setSearchQ] = useState('')
     let handleSearch = (e) => {
         e.preventDefault()

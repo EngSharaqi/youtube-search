@@ -1,9 +1,7 @@
 import styles from '../styles/Home.module.css'
-import Nav from '../components/nav'
 export default function Result(props) {
     return (
         <>
-            <Nav />
             {
                 props.items?.map( items =>
                     <div key={items.id.videoId} className={styles.resultSection}>
